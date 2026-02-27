@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriFact - 企业信息验证平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #764ba2;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VeriFact</h1>
+        <p>企业信息验证与尽职调查平台</p>
+    </header>
+    
+    <nav>
+        <a href="#about">关于我们</a>
+        <a href="#features">产品功能</a>
+        <a href="#services">服务项目</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="section">
+            <h2>关于 VeriFact</h2>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                VeriFact 是专业的企业信息验证平台，致力于为企业提供准确、可靠的背景调查服务。
+                我们利用先进的数据分析技术和人工智能算法，帮助企业降低商业风险，做出明智的商业决策。
+            </p>
+            <div style="text-align: center;">
+                <a href="#contact" class="btn">了解更多</a>
+            </div>
+        </section>
+        
+        <section id="features" class="section">
+            <h2>核心功能</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🔍 企业背景调查</h3>
+                    <p>全面的企业工商信息、股权结构、法律诉讼等多维度背景调查，让合作更安心。</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 数据分析报告</h3>
+                    <p>智能生成可视化数据分析报告，直观展示企业风险点和经营状况。</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ 实时验证</h3>
+                    <p>API 接口支持，可实时验证企业信息，快速集成到您的业务系统中。</p>
+                </div>
+                <div class="feature">
+                    <h3>🛡️ 风险预警</h3>
+                    <p>持续监控目标企业动态，及时推送风险预警信息，防患于未然。</p>
+                </div>
+                <div class="feature">
+                    <h3>📱 便捷查询</h3>
+                    <p>支持网页端和移动端访问，随时随地查询企业信息。</p>
+                </div>
+                <div class="feature">
+                    <h3>🔐 数据安全</h3>
+                    <p>采用银行级加密技术，确保企业数据安全，严格保护客户隐私。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="section">
+            <h2>服务项目</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>基础版</h3>
+                    <p>企业工商基本信息查询</p>
+                    <p>法人及股东信息</p>
+                    <p>历史变更记录</p>
+                    <a href="#contact" class="btn">咨询价格</a>
+                </div>
+                <div class="feature">
+                    <h3>专业版</h3>
+                    <p>包含基础版所有功能</p>
+                    <p>法律诉讼与失信信息</p>
+                    <p>关联企业分析</p>
+                    <p>风险评级报告</p>
+                    <a href="#contact" class="btn">咨询价格</a>
+                </div>
+                <div class="feature">
+                    <h3>企业版</h3>
+                    <p>包含专业版所有功能</p>
+                    <p>API 接口接入</p>
+                    <p>定制化数据服务</p>
+                    <p>专属客户经理</p>
+                    <a href="#contact" class="btn">咨询价格</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 邮箱</h4>
+                    <p>contact@verifact.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📞 电话</h4>
+                    <p>400-XXX-XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 地址</h4>
+                    <p>北京市朝阳区XXX大厦</p>
+                </div>
+                <div class="contact-item">
+                    <h4>⏰ 工作时间</h4>
+                    <p>周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 VeriFact. All rights reserved.</p>
+        <p>企业信息验证平台 | 让商业更可信</p>
+    </footer>
+</body>
+</html>
