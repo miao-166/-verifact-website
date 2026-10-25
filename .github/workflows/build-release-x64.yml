@@ -1,0 +1,52 @@
+name: Build TuYuePDF Release x64
+
+on:
+  push:
+    branches:
+      - "rebrand/tuyuepdf"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Build Release x64
+        run: msbuild .\vs2022\TuYuePDF.sln "/t:TuYuePDF;libmupdf" "/p:Configuration=Release;Platform=x64" /m
+
+      - name: Create legacy shell compatibility alias
+        shell: pwsh
+        run: Copy-Item "out/rel64/TuYuePDF.exe" "out/rel64/SumatraPDF.exe" -Force
+
+      - name: Record artifact metadata
+        shell: pwsh
+        run: |
+          $exe = Get-Item "out/rel64/TuYuePDF.exe"
+          $metadata = [pscustomobject]@{
+            Path = $exe.FullName
+            Length = $exe.Length
+            LastWriteTime = $exe.LastWriteTime.ToString("o")
+            FileVersion = $exe.VersionInfo.FileVersion
+            SHA256 = (Get-FileHash $exe.FullName -Algorithm SHA256).Hash
+          }
+          $metadata | Format-List | Out-File "out/rel64/build-metadata.txt" -Encoding utf8
+
+      - name: Upload Windows x64 artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tuyuepdf-mouse-361-release-x64
+          path: |
+            out/rel64/TuYuePDF.exe
+            out/rel64/SumatraPDF.exe
+            out/rel64/libmupdf.dll
+            out/rel64/build-metadata.txt
+          if-no-files-found: error
+          retention-days: 7
